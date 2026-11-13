@@ -9,6 +9,8 @@ A task management web app built for the **RTIH Intern – IT Technical Assignmen
 | Database | MySQL 8, schema and sample data defined with Laravel migrations + seeders |
 | Tests | PHPUnit feature tests (`php artisan test`), Postman collection |
 
+> **New to PHP or MySQL?** Follow the step-by-step **[Setup Guide](docs/SETUP_GUIDE.md)**: it covers installing every tool and the exact commands to run.
+
 More detail: [docs/TECH_STACK.md](docs/TECH_STACK.md) · [docs/BUILD_PLAN.md](docs/BUILD_PLAN.md) · [docs/TEST_CASES.md](docs/TEST_CASES.md)
 
 ---
