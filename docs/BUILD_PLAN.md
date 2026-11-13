@@ -26,7 +26,7 @@ This plan breaks everything the assignment PDF asks for into phases, in build or
 | 9 | Documentation & submission | §6, §10 | 2 h |
 | | **Total** | | **≈ 21.5 h (2–3 days)** |
 
-The PDF asks for Level 1 to be finished before Levels 2 and 3, and this plan follows that order. However, the Phase 1 migrations already include `users.role` and `tasks.user_id`, so Level 3 doesn't force a schema rewrite. Until Phase 6, tasks belong to the seeded demo user.
+The PDF asks for Level 1 to be finished before Levels 2 and 3, and this plan follows that order. However, the Phase 1 migrations already include `users.role` and `tasks.user_id`, so Level 3 doesn't force a schema rewrite. In the final code, every task is created for the logged-in user (see Phase 6).
 
 ---
 
@@ -255,7 +255,7 @@ Route::apiResource('tasks', TaskController::class);
 
 - [ ] `app/Http/Controllers/Api/TaskController.php`: generate it with `php artisan make:controller Api/TaskController --api --model=Task`.
 - [ ] Each action returns a `TaskResource` and a message: "Task added", "Task updated" or "Task deleted".
-- [ ] Temporary: tasks are created for the seeded demo user. Phase 6 switches this to `$request->user()->tasks()->create(...)`.
+- [ ] Tasks are created with `$request->user()->tasks()->create(...)`, so the owner always comes from the logged-in user (see Phase 6).
 
 ### Frontend
 - [ ] `DashboardPage`: a table on desktop and cards on mobile. Columns: title, description (truncated), status badge, created date, actions.
